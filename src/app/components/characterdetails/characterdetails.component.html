@@ -1,0 +1,20 @@
+<mat-card *ngIf="character">
+    <mat-card-header>
+      <mat-card-title>{{ character.name }}</mat-card-title>
+      <mat-card-subtitle>{{ character.house || 'No House' }}</mat-card-subtitle>
+    </mat-card-header>
+  
+    <img mat-card-image [src]="character.image || 'assets/placeholder.jpg'" alt="{{ character.name }}">
+  
+    <mat-card-content>
+      <p><strong>Actor:</strong> {{ character.actor || 'Unknown' }}</p>
+      <p><strong>Gender:</strong> {{ character.gender }}</p>
+      <p><strong>Date of Birth:</strong> {{ character.dateOfBirth || 'N/A' }}</p>
+      <p><strong>Ancestry:</strong> {{ character.ancestry || 'N/A' }}</p>
+      <p><strong>Eye Colour:</strong> {{ character.eyeColour || 'N/A' }}</p>
+      <p><strong>Hair Colour:</strong> {{ character.hairColour || 'N/A' }}</p>
+    </mat-card-content>
+  </mat-card>
+  
+  <p *ngIf="!character">Loading character details...</p>
+  

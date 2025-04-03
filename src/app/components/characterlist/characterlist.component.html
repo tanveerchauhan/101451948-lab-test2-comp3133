@@ -1,0 +1,25 @@
+<div class="filter-buttons">
+    <button mat-raised-button color="primary" (click)="filterByHouse('')">All</button>
+    <button mat-raised-button color="warn" (click)="filterByHouse('Gryffindor')">Gryffindor</button>
+    <button mat-raised-button color="accent" (click)="filterByHouse('Slytherin')">Slytherin</button>
+    <button mat-raised-button style="background-color: #ecb939; color: black;" (click)="filterByHouse('Hufflepuff')">Hufflepuff</button>
+    <button mat-raised-button style="background-color: #222f5b; color: white;" (click)="filterByHouse('Ravenclaw')">Ravenclaw</button>
+  </div>
+  
+  <app-characterfilter (houseSelected)="filterByHouse($event)"></app-characterfilter>
+  
+  <div class="card-grid" *ngIf="!loading">
+    <mat-card *ngFor="let character of filteredCharacters" (click)="goToDetails(character)">
+      <mat-card-header>
+        <mat-card-title>{{ character.name }}</mat-card-title>
+        <mat-card-subtitle>
+          <span class="house" [ngClass]="character.house?.toLowerCase()">
+            {{ character.house || 'No House' }}
+          </span>
+        </mat-card-subtitle>
+      </mat-card-header>
+  
+      <img mat-card-image [src]="character.image || 'https://via.placeholder.com/150'" alt="{{ character.name }}">
+    </mat-card>
+  </div>
+  

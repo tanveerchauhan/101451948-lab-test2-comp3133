@@ -1,0 +1,10 @@
+mat-card {
+    margin: 2rem;
+    color: white;
+    background-color: #1f1f1f;
+  }
+  mat-card img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+  

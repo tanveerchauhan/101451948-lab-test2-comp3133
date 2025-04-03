@@ -1,0 +1,10 @@
+<mat-form-field appearance="fill" style="width: 200px;">
+    <mat-label>Select House</mat-label>
+    <mat-select (selectionChange)="onHouseChange($event.value)">
+      <mat-option *ngFor="let house of houses" [value]="house">
+        {{ house }}
+      </mat-option>
+      <mat-option value="">All</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
